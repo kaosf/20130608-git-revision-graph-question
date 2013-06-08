@@ -1,0 +1,44 @@
+#! /bin/sh
+
+mkdir a
+cd a
+git init
+touch a.txt
+git add a.txt
+git commit -m a
+touch b.txt
+git add b.txt
+git commit -m b
+git checkout -b b-0
+touch c.txt
+git add c.txt
+git commit -m c
+touch d.txt
+git add d.txt
+git commit -m d
+git checkout master
+git merge b-0 --no-ff
+git checkout b-0
+git checkout -b b-1
+touch e.txt
+git add e.txt
+git commit -m e
+git checkout -b b-2
+touch f.txt
+git add f.txt
+git commit -m f
+git checkout b-1
+touch g.txt
+git add g.txt
+git commit -m g
+git checkout b-2
+touch h.txt
+git add h.txt
+git commit -m h
+git checkout b-1
+git merge b-2 --no-ff
+touch i.txt
+git add i.txt
+git commit -m i
+git checkout master
+git merge b-1 --no-ff

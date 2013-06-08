@@ -3,3 +3,9 @@
 ## Question
 
 ![alt question](question.jpg)
+
+## Answer
+
+```sh
+./answer
+```
